@@ -19,7 +19,7 @@
 #include <stdint.h>					// pour les types (type entier)
 
 //--- librairie perso ---//
-#include "headerFile.h" 
+#include "MesFonction.h" 
 
 //-- definition --// 
 #define LIMITE_MAX	10000.0

@@ -6,7 +6,7 @@ Réalisé par : Vitor Coelho
 */
 
 //-- fonction --//
-#include "MesFonctions.h"
+#include "MesFonction.h"
 #include <stdio.h>
 
 
@@ -32,7 +32,7 @@ void InfoVariables(float valUtilisateur)
 	}
 
 	//Test valeur réelle ou entière
-	if ((valUtilisateur - valEntier) == 0.0)
+	if ((valUtilisateur - (short)valEntier) == 0.0)
 	{
 		printf("la valeur est Réelle \n");
 		printf("cette valeur ne peut ni etre paire ou impaire \n");
@@ -50,13 +50,15 @@ void InfoVariables(float valUtilisateur)
 		{
 			printf("la valeur est impaire \n");
 		}
-		if ((valUtilisateur >= -128) || (valUtilisateur <= 255))
-		{
-			printf("Type à utiliser : short ou int16_t \n");
+
+		if (sizeof(valUtilisateur) == 1) {
+			printf("La valeur est sur 8 bits.\n");
 		}
-		else
-		{
-			printf("Type à utiliser : char ou int8_t \n");
+		else if (sizeof(valUtilisateur) == 2) {
+			printf("La valeur est sur 16 bits.\n");
+		}
+		else {
+			printf("La taille de la valeur n'est ni sur 8 bits ni sur 16 bits.\n");
 		}
 	}
 }
