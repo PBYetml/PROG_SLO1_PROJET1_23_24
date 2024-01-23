@@ -11,7 +11,7 @@ Réalisé par : Vitor Coelho
 
 
 
-void InfoVariables(valUtilisateur)
+void InfoVariables(float valUtilisateur)
 {
 
 	// Déclaration des variables
