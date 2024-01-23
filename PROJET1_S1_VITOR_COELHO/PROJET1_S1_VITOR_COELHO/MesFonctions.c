@@ -6,7 +6,7 @@ Réalisé par : Vitor Coelho
 */
 
 //-- fonction --//
-#include "headerFile.h"
+#include "MesFonctions.h"
 #include <stdio.h>
 
 
@@ -42,7 +42,7 @@ void InfoVariables(float valUtilisateur)
 	{
 		printf("la valeur est Entiere \n");
 
-		if ((valUtilisateur / 2.0) == 0.0)
+		if (((short)valUtilisateur % 2) == 0.0)
 		{
 			printf("la valeur est paire \n");
 		}
