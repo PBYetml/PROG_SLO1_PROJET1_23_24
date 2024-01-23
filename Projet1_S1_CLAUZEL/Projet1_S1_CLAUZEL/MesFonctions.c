@@ -3,13 +3,14 @@
 ACL
 */
 #include "MesFonctions.h"
+#include <stdio.h>
 
 void InfoVariables (float valUser)
 {
 	short valEntier = 0;
 	float reste = 0.0;
 
-	valEntier = valUser;
+	valEntier = (short) valUser;
 
 	if (valUser < 0.0)
 	{
@@ -19,7 +20,7 @@ void InfoVariables (float valUser)
 	{
 		printf("La valeur est Positive!\n");
 	}
-	if ((valUser - valEntier) == 0.0)
+	if ((valUser - (short)valEntier) == 0.0)
 	{
 		printf("La valeur est Entiere\n");
 		if ((short)valUser % DEU == 0)
@@ -30,14 +31,34 @@ void InfoVariables (float valUser)
 		{
 			printf("La valeur est Impaire\n");
 		}
-		//valuser+taillemaxmacvaluser<demiplage=ponegatif 
-		if  ((valUser < ValB))
+
+		//marche pour positif 
+		//if  (valEntier >>8) && .... 
+
+		/*
+		if ((valEntier > ValA) && (valEntier < ValB))
 		{
 			printf("Type a utiliser : char ou int8_t\n");
 		}
-		else
+		else if((valEntier > ValC) && (valEntier < ValD))
 		{
 			printf("Type a utiliser : short ou int16_t\n");
+			
+		}
+		else
+		{
+			printf("Type a utiliser : long ou int\n");
+		}
+		*/
+
+		if (sizeof(valEntier) > sizeof(char))
+		{
+			printf("Type a utiliser : short ou int16_t\n");
+
+		}
+		else
+		{
+			printf("Type a utiliser : char ou int8_t\n");
 		}
 	}
 	else
